@@ -1,0 +1,34 @@
+/**
+ * Created by Genesis on 3/22/2016.
+ */
+
+var iterator;
+iterator = function () {
+    var iterator = function () {
+        list = Object.list(data),
+            index = 0,
+            length = list.length;
+
+        return {
+            next: function () {
+                var element;
+                if (!this.hasNext()) {
+                    return null;
+                }
+                element = data[list[index]];
+                index++;
+                return element;
+            },
+            hasNext: function () {
+                return index < length;
+            },
+            rewind: function () {
+                index = 0;
+                return data[list[index]];
+            },
+            current: function () {
+                return data[list[index]];
+            }
+        }
+    };
+};
